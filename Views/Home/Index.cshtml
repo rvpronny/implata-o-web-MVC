@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+
+    <h1> >>> Sistema de Controle Interno - LH PET <<< </h1>
+
+            <table class="table table-hover table 5m table-bordered table 5m caption-top">
+                <caption> Lista de Clientes</caption>
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">CPF</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Paciente (pet)</th>
+                    </tr>
+                </thead>
+                <tbody>
+        @foreach (var item in @ViewBag.listaClientes)
+        {
+            <tr>
+                        <th scope="row">@item.Id</th>
+                        <td>@item.Nome</td>
+                        <td>@item.Cpf</td>
+                        <td>@item.Email</td>
+                        <td>@item.paciente</td>
+                    </tr>
+        }
+        
+                
+                </tbody>
+            </table>
+
+
+            <table class="table table-hover table 5m table-bordered table 5m caption-top">
+                <caption> Lista de Fornecedores</caption>
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">CNPJ</th>
+                        <th scope="col">E-mail</th>
+                    </tr>
+                </thead>
+                <tbody>
+            @foreach (var item in @ViewBag.listaFornecedor)
+            {
+                    <tr>
+                        <th scope="row">@item.Id</th>
+                        <td>@item.Nome</td>
+                        <td>@item.Cnpj</td>
+                        <td>@item.Email</td>
+                    
+                    </tr>
+            }
+                </tbody>
+            </table>
+</div>
